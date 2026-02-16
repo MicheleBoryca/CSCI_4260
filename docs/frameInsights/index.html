@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Observations → Insights</title>
+
+<style>
+:root{
+  --bg: #f3f5f4;
+  --card: #ffffff;
+  --sage: #4f7c73;
+  --sage-tint: #eaf2ef;
+  --plum: #6f5a7a;
+  --plum-tint: #f1ecf4;
+
+  --text: #242424;
+  --muted: #616161;
+  --shadow: 0 10px 26px rgba(0,0,0,.07);
+  --radius: 16px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 28px;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header{
+  text-align:center;
+  margin-bottom: 18px;
+}
+
+h1{
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  letter-spacing: -0.3px;
+}
+
+.subtitle{
+  margin:0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pair{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,0,0,.05);
+}
+
+.pair::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width: 10px;
+  background: linear-gradient(180deg, var(--sage), var(--plum));
+}
+
+.pair-inner{
+  padding: 14px 14px 14px 18px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.panel{
+  border-radius: 14px;
+  padding: 12px 12px;
+  min-height: 92px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,.04);
+}
+
+.obs{
+  background: var(--sage-tint);
+}
+
+.ins{
+  background: var(--plum-tint);
+}
+
+.tag{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.badge{
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+}
+
+.obs .badge{ color: var(--sage); }
+.obs .dot{ background: var(--sage); }
+
+.ins .badge{ color: var(--plum); }
+.ins .dot{ background: var(--plum); }
+
+.panel p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.ins strong{
+  font-weight: 650;
+}
+
+.connector{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(0,0,0,.06);
+  color: var(--muted);
+  font-size: 16px;
+}
+
+@media print{
+  body{ padding: 10px; background:#fff; }
+  .pair{ box-shadow:none; }
+}
+
+@media (max-width: 860px){
+  .grid{ grid-template-columns: 1fr; }
+  .pair-inner{ grid-template-columns: 1fr; }
+  .connector{
+    left: calc(100% - 26px);
+    top: 14px;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Observations → Insights</h1>
+      <p class="subtitle">Connecting what people do to why it matters</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="pair">
+        <div class="connector">→</div>
+        <div class="pair-inner">
+          <div class="panel obs">
+            <div class="tag"><span class="dot"></span><span class="badge">Observation</span></div>
+            <p>Shoppers compare bulk pricing and mentally calculate unit costs before committing.</p>
+          </div>
+          <div class="panel ins">
+            <div class="tag"><span class="dot"></span><span class="badge">Insight</span></div>
+            <p><strong>People need proof of value</strong> to justify a higher upfront cost.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="connector">→</div>
+        <div class="pair-inner">
+          <div class="panel obs">
+            <div class="tag"><span class="dot"></span><span class="badge">Observation</span></div>
+            <p>Large quantities are purchased even when storage or expiration may be challenging.</p>
+          </div>
+          <div class="panel ins">
+            <div class="tag"><span class="dot"></span><span class="badge">Insight</span></div>
+            <p><strong>Preparedness beats convenience</strong> when shoppers are optimizing time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="connector">→</div>
+        <div class="pair-inner">
+          <div class="panel obs">
+            <div class="tag"><span class="dot"></span><span class="badge">Observation</span></div>
+            <p>Families/couples discuss purchases and negotiate quantities in real time.</p>
+          </div>
+          <div class="panel ins">
+            <div class="tag"><span class="dot"></span><span class="badge">Insight</span></div>
+            <p><strong>Bulk shopping is a shared decision</strong> tied to responsibility and planning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="connector">→</div>
+        <div class="pair-inner">
+          <div class="panel obs">
+            <div class="tag"><span class="dot"></span><span class="badge">Observation</span></div>
+            <p>Shoppers tolerate crowds, long lines, and heavy carts without leaving.</p>
+          </div>
+          <div class="panel ins">
+            <div class="tag"><span class="dot"></span><span class="badge">Insight</span></div>
+            <p><strong>Long-term payoff</strong> outweighs short-term discomfort in the experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="connector">→</div>
+        <div class="pair-inner">
+          <div class="panel obs">
+            <div class="tag"><span class="dot"></span><span class="badge">Observation</span></div>
+            <p>Shoppers get visibly excited about seasonal items or “special finds.”</p>
+          </div>
+          <div class="panel ins">
+            <div class="tag"><span class="dot"></span><span class="badge">Insight</span></div>
+            <p><strong>Discovery is an emotional reward</strong> that reinforces “smart shopper” identity.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
